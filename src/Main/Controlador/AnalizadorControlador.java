@@ -1,2 +1,4 @@
-package Main.Controlador;public class AnalizadorControlador {
+package Main.Controlador;
+
+public class AnalizadorControlador {
 }

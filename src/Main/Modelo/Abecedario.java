@@ -1,4 +1,4 @@
-package Modelo;
+package Main.Modelo;
 
 public class Abecedario {
 }
