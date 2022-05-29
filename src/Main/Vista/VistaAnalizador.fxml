@@ -4,13 +4,30 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Controlador.AnalizadorControlador">
+<AnchorPane prefHeight="400.0" prefWidth="601.0" style="-fx-background-color: #F4BDFF; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main.Controlador.AnalizadorControlador">
    <children>
-      <Button layoutX="222.0" layoutY="28.0" mnemonicParsing="false" onAction="#analizarTexto" text="Analizar Texto" />
-      <Button layoutX="222.0" layoutY="73.0" mnemonicParsing="false" onAction="#AnalizarArchivo" text="Analizar Archivo" />
-      <TextField fx:id="cadenaIngresada" layoutX="28.0" layoutY="28.0" />
-      <Label fx:id="resultado" layoutX="28.0" layoutY="183.0" prefHeight="81.0" prefWidth="279.0" text="Cuadro Informativo" />
+      <Label layoutX="144.0" layoutY="22.0" prefHeight="37.0" prefWidth="332.0" text="       Analizador Léxico" textAlignment="CENTER">
+         <font>
+            <Font name="Britannic Bold" size="25.0" />
+         </font>
+      </Label>
+      <Button layoutX="368.0" layoutY="164.0" mnemonicParsing="false" onAction="#analizarTexto" prefHeight="37.0" prefWidth="107.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;" text="Analizar Texto">
+         <font>
+            <Font name="Britannic Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="141.0" layoutY="162.0" mnemonicParsing="false" onAction="#AnalizarArchivo" prefHeight="37.0" prefWidth="107.0" style="-fx-background-color: #ffffff; -fx-background-radius: 10;" text="Analizar Archivo">
+         <font>
+            <Font name="Britannic Bold" size="12.0" />
+         </font></Button>
+      <TextField fx:id="cadenaIngresada" layoutX="141.0" layoutY="107.0" prefHeight="37.0" prefWidth="332.0" style="-fx-background-color: #9AF9FF; -fx-background-radius: 10;">
+         <font>
+            <Font name="Britannic Bold" size="12.0" />
+         </font></TextField>
+      <Label fx:id="resultado" layoutX="144.0" layoutY="223.0" prefHeight="37.0" prefWidth="332.0" text="                        Cuadro Informativo">
+         <font>
+            <Font name="Britannic Bold" size="14.0" />
+         </font></Label>
    </children>
 </AnchorPane>
