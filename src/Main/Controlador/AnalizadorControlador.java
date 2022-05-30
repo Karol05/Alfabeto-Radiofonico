@@ -21,7 +21,7 @@ public class AnalizadorControlador {
 
 
     @FXML
-    File abrirDocumento() throws IOException {
+    File abrirDocumento() {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Buscar Archivo");
         File textFile;
@@ -48,15 +48,20 @@ public class AnalizadorControlador {
     @FXML
     void AnalizarArchivo(ActionEvent event) throws IOException {
         AnalizadorLexico analizadorLexico = new AnalizadorLexico();
-        String[] textoSeparado = analizadorLexico.separarDocumento(abrirDocumento());
-        ArrayList<String> resultadoAnalisis = analizadorLexico.analizarDocumento(textoSeparado);
-        if(resultadoAnalisis.isEmpty())
+        try {
+            String[] textoSeparado = analizadorLexico.separarDocumento(abrirDocumento());
+            ArrayList<String> resultadoAnalisis = analizadorLexico.analizarDocumento(textoSeparado);
+            if(resultadoAnalisis.isEmpty())
+            {
+                resultado.setText("No se encontraron errores");
+            }
+            else
+            {
+                resultado.setText("Errores encontrados, valores " + resultadoAnalisis.toString() + " No existen");
+            }
+        }catch (Exception e)
         {
-            resultado.setText("No se encontraron errores");
-        }
-        else
-        {
-            resultado.setText("Errores encontrados, valores " + resultadoAnalisis.toString() + " No existen");
+            System.out.println("Error al abrir el archivo");
         }
     }
 
@@ -66,15 +71,23 @@ public class AnalizadorControlador {
     void analizarTexto(ActionEvent event) {
         String textoIngresado = cadenaIngresada.getText();
         AnalizadorLexico analizadorLexico = new AnalizadorLexico();
-        ArrayList<String> resultadoAnalisis = analizadorLexico.analizarTexto(textoIngresado);
-        if(resultadoAnalisis.isEmpty())
+        if(textoIngresado.isEmpty())
         {
-            resultado.setText("No se encontraron errores");
+            resultado.setText("No se ingreso ningun texto");
         }
         else
         {
-            resultado.setText("Errores encontrados, valores " + resultadoAnalisis.toString() + " No existen");
+            ArrayList<String> resultadoAnalisis = analizadorLexico.analizarTexto(textoIngresado);
+            if(resultadoAnalisis.isEmpty())
+            {
+                resultado.setText("No se encontraron errores");
+            }
+            else
+            {
+                resultado.setText("Errores encontrados, valores " + resultadoAnalisis.toString() + " No existen");
+            }
         }
+
     }
 
 }
