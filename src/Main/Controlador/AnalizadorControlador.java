@@ -57,7 +57,14 @@ public class AnalizadorControlador {
             }
             else
             {
-                resultado.setText("Errores encontrados, valores " + resultadoAnalisis.toString() + " No existen");
+                if(resultadoAnalisis.size() == 1)
+                {
+                    resultado.setText("Se encontro un error: " + resultadoAnalisis.get(0) + " \nNo se reconoce");
+                }else
+                {
+                    resultado.setText("Se encontraron " + resultadoAnalisis.size() + " errores: " + resultadoAnalisis + " \nNo se reconocen");
+                }
+
             }
         }catch (Exception e)
         {
@@ -84,7 +91,13 @@ public class AnalizadorControlador {
             }
             else
             {
-                resultado.setText("Errores encontrados, valores " + resultadoAnalisis.toString() + " No existen");
+                if(resultadoAnalisis.size() == 1)
+                {
+                    resultado.setText("Se encontro un error: " + resultadoAnalisis.get(0) + " \nNo se reconoce");
+                }else
+                {
+                    resultado.setText("Se encontraron " + resultadoAnalisis.size() + " errores: " + resultadoAnalisis + " \nNo se reconocen");
+                }
             }
         }
 

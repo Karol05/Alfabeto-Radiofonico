@@ -1,8 +1,5 @@
 package Main.Modelo;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -35,10 +32,10 @@ public class AnalizadorLexico {
         gramatica.agregarRegla("Palabra", "LIMA");
         gramatica.agregarRegla("Palabra", "MIKE");
         gramatica.agregarRegla("Palabra", "NOVEMBER");
-        gramatica.agregarRegla("Palabra", "ÑANDÚ");
+        gramatica.agregarRegla("Palabra", "ÑANDU");
         gramatica.agregarRegla("Palabra", "OSCAR");
         gramatica.agregarRegla("Palabra", "PAPA");
-        gramatica.agregarRegla("Palabra", "QUEBEC");
+        gramatica.agregarRegla("Palabra", "QUEBEQ");
         gramatica.agregarRegla("Palabra", "ROMEO");
         gramatica.agregarRegla("Palabra", "SIERRA");
         gramatica.agregarRegla("Palabra", "TANGO");
@@ -46,7 +43,7 @@ public class AnalizadorLexico {
         gramatica.agregarRegla("Palabra", "VICTOR");
         gramatica.agregarRegla("Palabra", "WHISKEY");
         gramatica.agregarRegla("Palabra", "X-RAY");
-        gramatica.agregarRegla("Palabra", "YANKEE");
+        gramatica.agregarRegla("Palabra", "YANKIE");
         gramatica.agregarRegla("Palabra", "ZULU");
         gramatica.agregarRegla("Palabra", "UNO");
         gramatica.agregarRegla("Palabra", "DOS");
@@ -69,7 +66,11 @@ public class AnalizadorLexico {
         String[] gramaticaEntrante = separarPalabras(cadena);
         for(int i = 0; i < gramaticaEntrante.length; i++){
             if (!gramatica.buscaRegla(gramaticaEntrante[i], gramatica.getValorRegla())) {
+
                 errores.add(gramaticaEntrante[i]);
+            }
+            else{
+                System.out.println("Palabra: " + gramaticaEntrante[i] + " - Regla: " + gramatica.getNombreRegla().get(i));
             }
         }
 
@@ -81,7 +82,11 @@ public class AnalizadorLexico {
         Gramatica gramatica = definirGramatica();
         for(int i = 0; i < gramaticaEntrante.length; i++){
             if (!gramatica.buscaRegla(gramaticaEntrante[i], gramatica.getValorRegla())) {
+
                 errores.add(gramaticaEntrante[i]);
+            }
+            else{
+                System.out.println("Palabra: " + gramaticaEntrante[i] + " - Regla: " + gramatica.getNombreRegla().get(i));
             }
         }
 

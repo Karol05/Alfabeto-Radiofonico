@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="551ddd3a-580d-4b5a-8f7e-dc61f0b21e33" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
+    <list default="true" id="551ddd3a-580d-4b5a-8f7e-dc61f0b21e33" name="Changes" comment="Se agregaron validaciones finales de texto y de archivo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Alfabeto Militar.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Controlador/AnalizadorControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Controlador/AnalizadorControlador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Modelo/AnalizadorLexico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Modelo/AnalizadorLexico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Vista/VistaAnalizador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Vista/VistaAnalizador.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +40,12 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\luise\IdeaProjects\Alfabeto-Radiofonico\out\production\Alfabeto-Radiofonico\META-INF" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
@@ -73,8 +78,19 @@
       <updated>1653835852673</updated>
       <workItem from="1653835854530" duration="4568000" />
       <workItem from="1653877761146" duration="488000" />
-      <workItem from="1653878279694" duration="88000" />
+      <workItem from="1653878279694" duration="2809000" />
+      <workItem from="1653891142059" duration="203000" />
+      <workItem from="1653926751188" duration="1786000" />
+      <workItem from="1653930893658" duration="752000" />
     </task>
+    <task id="LOCAL-00001" summary="Se agregaron validaciones finales de texto y de archivo">
+      <created>1653878522217</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653878522217</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,6 +106,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Se agregaron validaciones finales de texto y de archivo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agregaron validaciones finales de texto y de archivo" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Alfabeto_Radiofonico$Main.ic" NAME="Main Coverage Results" MODIFIED="1653877914220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
