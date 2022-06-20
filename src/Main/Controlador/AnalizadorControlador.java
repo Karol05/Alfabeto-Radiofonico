@@ -1,10 +1,14 @@
 package Main.Controlador;
 
 import Main.Modelo.AnalizadorLexico;
+import Main.Modelo.Gramatica;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
 
 import java.io.File;
@@ -18,6 +22,13 @@ public class AnalizadorControlador {
 
     @FXML
     private Label resultado;
+
+
+
+
+    public void initialize() {
+
+    }
 
 
     @FXML

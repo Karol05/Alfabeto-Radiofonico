@@ -8,9 +8,6 @@ import java.util.ArrayList;
 
 public class AnalizadorLexico {
 
-    public void cadena(){
-
-    }
 
     public String[] separarPalabras(String cadena){
         return cadena.split(" ");
