@@ -4,17 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="551ddd3a-580d-4b5a-8f7e-dc61f0b21e33" name="Changes" comment="Se agregaron validaciones finales de texto y de archivo">
+    <list default="true" id="551ddd3a-580d-4b5a-8f7e-dc61f0b21e33" name="Changes" comment="SE MUESTRAN LOS TOKENS DE LAS PALABRAS CORRECTAS">
+      <change afterPath="$PROJECT_DIR$/src/Main/Modelo/AnalizadorSintactico.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main/Modelo/Key.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Main/Modelo/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Controlador/AnalizadorControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Controlador/AnalizadorControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alfabeto-Radiofonico/META-INF/MANIFES.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alfabeto-Radiofonico/Main/Controlador/AnalizadorControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alfabeto-Radiofonico/Main/Controlador/AnalizadorControlador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alfabeto-Radiofonico/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alfabeto-Radiofonico/Main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alfabeto-Radiofonico/Main/Modelo/AnalizadorLexico.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alfabeto-Radiofonico/Main/Modelo/AnalizadorLexico.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Alfabeto-Radiofonico/Main/Vista/VistaAnalizador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alfabeto-Radiofonico/Main/Vista/VistaAnalizador.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Modelo/AnalizadorLexico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Modelo/AnalizadorLexico.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Vista/VistaAnalizador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Vista/VistaAnalizador.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -27,21 +44,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\luise\IdeaProjects\Alfabeto-Radiofonico\out\production\Alfabeto-Radiofonico\META-INF" />
@@ -81,7 +96,15 @@
       <workItem from="1653878279694" duration="2809000" />
       <workItem from="1653891142059" duration="203000" />
       <workItem from="1653926751188" duration="1786000" />
-      <workItem from="1653930893658" duration="752000" />
+      <workItem from="1653930893658" duration="1665000" />
+      <workItem from="1653962009183" duration="12000" />
+      <workItem from="1653967135808" duration="1987000" />
+      <workItem from="1654035171674" duration="43000" />
+      <workItem from="1654708196816" duration="301000" />
+      <workItem from="1655743163606" duration="436000" />
+      <workItem from="1655772020990" duration="748000" />
+      <workItem from="1656136276416" duration="2723000" />
+      <workItem from="1656182661868" duration="30463000" />
     </task>
     <task id="LOCAL-00001" summary="Se agregaron validaciones finales de texto y de archivo">
       <created>1653878522217</created>
@@ -90,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653878522217</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="SE MUESTRAN LOS TOKENS DE LAS PALABRAS CORRECTAS">
+      <created>1655743397636</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1655743397636</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,7 +139,24 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Se agregaron validaciones finales de texto y de archivo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agregaron validaciones finales de texto y de archivo" />
+    <MESSAGE value="SE MUESTRAN LOS TOKENS DE LAS PALABRAS CORRECTAS" />
+    <option name="LAST_COMMIT_MESSAGE" value="SE MUESTRAN LOS TOKENS DE LAS PALABRAS CORRECTAS" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main/Modelo/AnalizadorSintactico.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main/Modelo/AnalizadorSintactico.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Alfabeto_Radiofonico$Main.ic" NAME="Main Coverage Results" MODIFIED="1653877914220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
