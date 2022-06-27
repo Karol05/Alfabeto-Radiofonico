@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="551ddd3a-580d-4b5a-8f7e-dc61f0b21e33" name="Changes" comment="SE MUESTRAN LOS TOKENS DE LAS PALABRAS CORRECTAS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Alfabeto-Radiofonico/Main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Alfabeto-Radiofonico/Main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Controlador/AnalizadorControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Controlador/AnalizadorControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Modelo/AnalizadorSintactico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Modelo/AnalizadorSintactico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Modelo/AnalizadorLexico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Modelo/AnalizadorLexico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/Modelo/Gramatica.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Modelo/Gramatica.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +99,8 @@
       <workItem from="1656182661868" duration="30890000" />
       <workItem from="1656221796556" duration="417000" />
       <workItem from="1656275033028" duration="1200000" />
-      <workItem from="1656284996402" duration="4277000" />
+      <workItem from="1656284996402" duration="4490000" />
+      <workItem from="1656290031741" duration="448000" />
     </task>
     <task id="LOCAL-00001" summary="Se agregaron validaciones finales de texto y de archivo">
       <created>1653878522217</created>
