@@ -1,14 +1,10 @@
 package Main;
 
-import Main.Modelo.AnalizadorSintactico;
-import Main.Modelo.Terminal;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
-import java.util.Stack;
 
 
 public class Main extends Application {
@@ -23,11 +19,6 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        //launch(args);
-        AnalizadorSintactico analizadorSintactico = new AnalizadorSintactico();
-        Stack<Terminal>pila = analizadorSintactico.analizar("ALFA BRAVO");
-        for (int i =0; i<pila.size(); i++) {
-            System.out.println(pila.get(i).getNombre());
-        }
+        launch(args);
     }
 }

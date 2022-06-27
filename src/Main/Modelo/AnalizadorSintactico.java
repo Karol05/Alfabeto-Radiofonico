@@ -1,8 +1,11 @@
 package Main.Modelo;
 
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Stack;
 
 
@@ -30,14 +33,15 @@ public class AnalizadorSintactico {
         }
         map.put(new Key("$", "PUNTO"), null);
         for (String s : nombreComplemento) {
+            map.put(new Key(s, "PUNTO"), null);
+        }
+        for (String s : nombreComplemento) {
             map.put(new Key(s, "CO"), i);
         }
         i++;
         map.put(new Key("$", "CO"), null);
         map.put(new Key(".", "PUNTO"), i);
         map.put(new Key(".", "CO"), null);
-
-
         return map;
     }
 
@@ -52,29 +56,34 @@ public class AnalizadorSintactico {
         Terminal terminal;
 
         do {
-            terminal = pila.pop();
+            terminal = pila.peek();
             if (terminal.isTerminal() || terminal.getNombre().equals("$")) {
                 if (terminal.getNombre().equals(palabras[iterador])) {
+                    pila.pop();
                     iterador++;
                 } else {
-                    System.out.println("Error en la cadena");
+                    System.out.println("Error en la cadena cerca de: " + palabras[iterador]);
                     return pila;
                 }
             } else {
-                if (existKeys(terminal.getNombre(), palabras[iterador])) {
+                if (existKeys(terminal.getNombre(), palabras)) {
+                    pila.pop();
                     produccion(palabras[iterador],terminal, pila);
                 } else {
-                    System.out.println("Error en la cadena");
+                    System.out.println("Error en la cadena cerca de " + palabras[iterador]);
                     return pila;
                 }
             }
         } while (!terminal.getNombre().equals("$"));
-
+        System.out.println("Cadena correcta");
         return pila;
     }
 
-    private boolean existKeys(String terminal, String cadena) {
-        if (diccionario.containsKey(new Key(cadena, terminal))) {
+    private boolean existKeys(String terminal, String[] cadena) {
+        if (diccionario.containsKey(new Key(cadena[iterador], terminal))) {
+            if(cadena[iterador].equals(".") && cadena[iterador-1].equals(".")){
+                return false;
+            }
             return true;
         }
         return false;
@@ -83,27 +92,10 @@ public class AnalizadorSintactico {
     public void produccion(String cadena, Terminal terminal, Stack<Terminal> pila) {
         if (diccionario().get(new Key(cadena, terminal.getNombre())) != null) {
             int i = (int) diccionario().get(new Key(cadena, terminal.getNombre()));
-            if (pila.size()-1 >= 1)
-            {
-                if(pila.get(1).getNombre().equals("PUNTO")) {
-                    for (int j = terminal.getTerminales().get(i).size() - 2; j >= 0; j--) {
-                        pila.push(terminal.getTerminales().get(i).get(j));
-                    }
-                }
-                else {
-                    for (int j = terminal.getTerminales().get(i).size() - 1; j >= 0; j--) {
-                        pila.push(terminal.getTerminales().get(i).get(j));
-                    }
-                }
+            for (int j = terminal.getTerminales().get(i).size() - 1; j >= 0; j--) {
+                pila.push(terminal.getTerminales().get(i).get(j));
             }
-            else {
-                for (int j = terminal.getTerminales().get(i).size() - 1; j >= 0; j--) {
-                    pila.push(terminal.getTerminales().get(i).get(j));
-                }
-            }
-
         }
-
     }
 
     public Terminal getTerminal() {
@@ -142,5 +134,16 @@ public class AnalizadorSintactico {
         return palabra;
     }
 
+    public String getCadena(File textFile) throws FileNotFoundException {
+        String cadena = "";
+        Scanner scanner = new Scanner(textFile);
+        while (scanner.hasNextLine()) {
+            cadena += scanner.nextLine();
+        }
+        return cadena;
+    }
+
 }
+
+
 

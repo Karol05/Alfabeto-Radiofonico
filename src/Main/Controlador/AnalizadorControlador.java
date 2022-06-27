@@ -1,19 +1,18 @@
 package Main.Controlador;
 
 import Main.Modelo.AnalizadorLexico;
-import Main.Modelo.Gramatica;
+import Main.Modelo.AnalizadorSintactico;
+import Main.Modelo.Terminal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class AnalizadorControlador {
 
@@ -59,8 +58,11 @@ public class AnalizadorControlador {
     @FXML
     void AnalizarArchivo(ActionEvent event) throws IOException {
         AnalizadorLexico analizadorLexico = new AnalizadorLexico();
+        AnalizadorSintactico analizadorSintactico = new AnalizadorSintactico();
+        File documento = abrirDocumento();
+        Stack<Terminal> pila = new Stack<>();
         try {
-            String[] textoSeparado = analizadorLexico.separarDocumento(abrirDocumento());
+            String[] textoSeparado = analizadorLexico.separarDocumento(documento);
             ArrayList<String> resultadoAnalisis = analizadorLexico.analizarDocumento(textoSeparado);
             if(resultadoAnalisis.isEmpty())
             {
@@ -81,6 +83,10 @@ public class AnalizadorControlador {
         {
             System.out.println("Error al abrir el archivo");
         }
+        pila = analizadorSintactico.analizar(analizadorSintactico.getCadena(documento));
+        for (int i =0; i<pila.size(); i++) {
+            System.out.println(pila.get(i).getNombre());
+        }
     }
 
 
@@ -88,7 +94,9 @@ public class AnalizadorControlador {
     @FXML
     void analizarTexto(ActionEvent event) {
         String textoIngresado = cadenaIngresada.getText();
+        AnalizadorSintactico analizadorSintactico = new AnalizadorSintactico();
         AnalizadorLexico analizadorLexico = new AnalizadorLexico();
+        Stack<Terminal> pila = new Stack<>();
         if(textoIngresado.isEmpty())
         {
             resultado.setText("No se ingreso ningun texto");
@@ -110,6 +118,11 @@ public class AnalizadorControlador {
                     resultado.setText("Se encontraron " + resultadoAnalisis.size() + " errores: " + resultadoAnalisis + " \nNo se reconocen");
                 }
             }
+        }
+        pila = analizadorSintactico.analizar(textoIngresado);
+
+        for (int i =0; i<pila.size(); i++) {
+            System.out.println(pila.get(i).getNombre());
         }
 
     }
