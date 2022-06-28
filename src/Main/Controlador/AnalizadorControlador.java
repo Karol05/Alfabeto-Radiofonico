@@ -60,7 +60,7 @@ public class AnalizadorControlador {
         AnalizadorLexico analizadorLexico = new AnalizadorLexico();
         AnalizadorSintactico analizadorSintactico = new AnalizadorSintactico();
         File documento = abrirDocumento();
-        Stack<Terminal> pila = new Stack<>();
+        Stack<Terminal> pila;
         try {
             String[] textoSeparado = analizadorLexico.separarDocumento(documento);
             ArrayList<String> resultadoAnalisis = analizadorLexico.analizarDocumento(textoSeparado);
@@ -84,8 +84,8 @@ public class AnalizadorControlador {
             System.out.println("Error al abrir el archivo");
         }
         pila = analizadorSintactico.analizar(analizadorSintactico.getCadena(documento));
-        for (int i =0; i<pila.size(); i++) {
-            System.out.println(pila.get(i).getNombre());
+        for (Terminal terminal : pila) {
+            System.out.println(terminal.getNombre());
         }
     }
 
@@ -96,7 +96,7 @@ public class AnalizadorControlador {
         String textoIngresado = cadenaIngresada.getText();
         AnalizadorSintactico analizadorSintactico = new AnalizadorSintactico();
         AnalizadorLexico analizadorLexico = new AnalizadorLexico();
-        Stack<Terminal> pila = new Stack<>();
+        Stack<Terminal> pila;
         if(textoIngresado.isEmpty())
         {
             resultado.setText("No se ingreso ningun texto");
@@ -121,8 +121,8 @@ public class AnalizadorControlador {
         }
         pila = analizadorSintactico.analizar(textoIngresado);
 
-        for (int i =0; i<pila.size(); i++) {
-            System.out.println(pila.get(i).getNombre());
+        for (Terminal terminal : pila) {
+            System.out.println(terminal.getNombre());
         }
 
     }

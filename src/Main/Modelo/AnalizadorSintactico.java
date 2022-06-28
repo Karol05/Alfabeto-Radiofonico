@@ -59,6 +59,7 @@ public class AnalizadorSintactico {
             terminal = pila.peek();
             if (terminal.isTerminal() || terminal.getNombre().equals("$")) {
                 if (terminal.getNombre().equals(palabras[iterador])) {
+                    System.out.println("Se encontro la palabra, quitando " + terminal.getNombre());
                     pila.pop();
                     iterador++;
                 } else {
@@ -68,6 +69,7 @@ public class AnalizadorSintactico {
             } else {
                 if (existKeys(terminal.getNombre(), palabras)) {
                     pila.pop();
+                    System.out.println("Quitando: " + terminal.getNombre());
                     produccion(palabras[iterador],terminal, pila);
                 } else {
                     System.out.println("Error en la cadena cerca de " + palabras[iterador]);
@@ -93,6 +95,7 @@ public class AnalizadorSintactico {
         if (diccionario().get(new Key(cadena, terminal.getNombre())) != null) {
             int i = (int) diccionario().get(new Key(cadena, terminal.getNombre()));
             for (int j = terminal.getTerminales().get(i).size() - 1; j >= 0; j--) {
+                System.out.println("Agregando: " + terminal.getTerminales().get(i).get(j).getNombre());
                 pila.push(terminal.getTerminales().get(i).get(j));
             }
         }
@@ -144,6 +147,5 @@ public class AnalizadorSintactico {
     }
 
 }
-
 
 
