@@ -1,11 +1,13 @@
 package Main.Controlador;
 
 import Main.Modelo.AnalizadorLexico;
+import Main.Modelo.AnalizadorSemantico;
 import Main.Modelo.AnalizadorSintactico;
 import Main.Modelo.Terminal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
 
@@ -20,13 +22,12 @@ public class AnalizadorControlador {
     private TextField cadenaIngresada;
 
     @FXML
+    private TextArea textArea;
+
+    @FXML
     private Label resultado;
 
-
-
-
     public void initialize() {
-
     }
 
 
@@ -58,6 +59,7 @@ public class AnalizadorControlador {
     @FXML
     void AnalizarArchivo(ActionEvent event) throws IOException {
         AnalizadorLexico analizadorLexico = new AnalizadorLexico();
+        AnalizadorSemantico analizadorSemantico = new AnalizadorSemantico();
         AnalizadorSintactico analizadorSintactico = new AnalizadorSintactico();
         File documento = abrirDocumento();
         Stack<Terminal> pila;
@@ -84,6 +86,9 @@ public class AnalizadorControlador {
             System.out.println("Error al abrir el archivo");
         }
         pila = analizadorSintactico.analizar(analizadorSintactico.getCadena(documento));
+        if (pila.isEmpty()) {
+            textArea.setText(analizadorSemantico.traducir(analizadorSintactico.getCadena(documento)));
+        }
         for (Terminal terminal : pila) {
             System.out.println(terminal.getNombre());
         }
@@ -95,6 +100,7 @@ public class AnalizadorControlador {
     void analizarTexto(ActionEvent event) {
         String textoIngresado = cadenaIngresada.getText();
         AnalizadorSintactico analizadorSintactico = new AnalizadorSintactico();
+        AnalizadorSemantico analizadorSemantico = new AnalizadorSemantico();
         AnalizadorLexico analizadorLexico = new AnalizadorLexico();
         Stack<Terminal> pila;
         if(textoIngresado.isEmpty())
@@ -120,6 +126,10 @@ public class AnalizadorControlador {
             }
         }
         pila = analizadorSintactico.analizar(textoIngresado);
+        if (pila.isEmpty()) {
+            String traduccion = analizadorSemantico.traducir(textoIngresado);
+            textArea.setText(traduccion);
+        }
 
         for (Terminal terminal : pila) {
             System.out.println(terminal.getNombre());
